@@ -103,6 +103,7 @@ class Trie {
                 if (actual.P[i] == null) return resultados;
                 actual = actual.P[i];
             }
+
         }
         return resultados;
     }
