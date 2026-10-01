@@ -104,7 +104,6 @@ class Trie {
                 actual = actual.P[i];
             }
 
-
         }
 
         return resultados;
