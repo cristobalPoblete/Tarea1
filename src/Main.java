@@ -30,27 +30,27 @@ class Trie {
         for (int k = 0; k < w.length(); k++) {
             int i = w.charAt(k) - 'A';
 
-            if (k == w.length() - 1) {
-                // Si es la última letra, encendemos el bit i en el nodo actual
+            if (k == w.length() - 1){
+                // Si es la última letra encendemos el bit i en el nodo actual
                 actual.B |= (1 << i);
             } else {
-                // Si hay más letras, creamos la continuación si no existe
-                if (actual.P[i] == null) {
+                // Si hay más letras creamos la continuación si no existe
+                if (actual.P[i] == null){
                     actual.P[i] = new NodoTrie();
                 }
-                actual = actual.P[i];
+                actual=actual.P[i];
             }
         }
     }
 
     public boolean buscar(String w) {
         if (w == null || w.isEmpty()) return false;
-        NodoTrie actual = raiz;
+        NodoTrie actual=raiz;
 
         for (int k = 0; k < w.length(); k++) {
-            int i = w.charAt(k) - 'A';
+            int i=w.charAt(k)-'A';
 
-            if (k == w.length() - 1) {
+            if (k==w.length()-1) {
                 // Verificamos si el bit i está encendido (es fin de palabra)
                 return (actual.B & (1 << i)) != 0;
             }
