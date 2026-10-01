@@ -106,6 +106,7 @@ class Trie {
 
 
         }
+
         return resultados;
     }
 
